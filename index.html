@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>Unhola</title>
+		<link rel="preload" href="https://fonts.gstatic.com/s/silkscreen/v4/m8JXjfVPf62XiF7kO-i9YLNlaw.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+		<link href="./stylesheets/style.css" rel="stylesheet">
+		<script type="importmap">
+		  {
+		    "imports": {
+		      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+		      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+		    }
+		  }
+		</script>
+		<script type="module">
+			import randomSeedable from 'https://cdn.jsdelivr.net/npm/random-seedable@1.0.8/+esm';
+		</script>
+		<script type="module">
+			import postprocessing from 'https://cdn.jsdelivr.net/npm/postprocessing@6.36.3/+esm';
+		</script>
+	</head>
+	<body>
+		<div style="position: absolute; font-family: 'Silkscreen';">I</div>
+		<script type="module" src="main.js"></script>
+		<div id="noise" class="overlay"></div>
+		<div id="loading-page" class="page">
+			<div class="loader"></div>
+		</div>
+		<div id="press-screen-page" class="page hidden">
+			<div class="container">press the screen</div>
+		</div>
+		<button class="hidden" id="jump-button"></button>
+		<button class="hidden" id="open-pause-menu-button">
+			<span>PAUSE</span> 
+			<span class="key">esc</span>
+		</button>
+		<button class="hidden go-back-button" id="close-pause-menu-button">
+			<span>CLOSE</span> 
+			<span class="key">esc</span>
+		</button>
+		<div id="ingame-loader" class="loader hidden"></div>
+		<div id="main-menu" class="menu ui column hidden">
+			<div class="column menu-container">
+				<h1>UNHOLA</h1>
+				<button class="new-game-button">new game</button>
+				<button class="continue-game-button">continue</button>
+				<button class="open-settings-menu-button">settings</button>
+			</div>
+		</div>
+		<div id="pause-menu" class="menu ui column hidden">
+			<div class="column menu-container ">
+				<h2>PAUSED</h2>
+				<button class="go-back-button">back</button>
+				<button class="save-game-button">save</button>
+				<button class="open-settings-menu-button">settings</button>
+				<button class="back-to-main-menu-button">quit</button>
+			</div>
+		</div>
+		<div id="settings-menu" class="menu ui column hidden">
+			<div class="column menu-container ">
+				<h2>SETTINGS</h2>
+				<button class="go-back-button">back to menu</button>
+				<div class="input-container">
+					<div class="input-range-label">
+						<span>MASTER VOLUME: </span> 
+						<span>100</span>
+					</div>
+					<input id="master-volume-input" type="range" min="0" max="100" value="50">
+				</div>
+				<div class="input-container">
+					<div class="input-range-label">
+						<span>UI VOLUME: </span> 
+						<span>100</span>
+					</div>
+					<input id="ui-volume-input" type="range" min="0" max="100" value="50">
+				</div>
+				<div class="input-container">
+					<div class="input-range-label">
+						<span>SOUND FX VOLUME: </span> 
+						<span>100</span>
+					</div>
+					<input id="sound-fx-volume-input" type="range" min="0" max="100" value="50">
+				</div>
+				<div class="input-container">
+					<div class="input-range-label">
+						<span>AMBIENCE VOLUME: </span> 
+						<span>100</span>
+					</div>
+					<input id="ambience-volume-input" type="range" min="0" max="100" value="50">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
